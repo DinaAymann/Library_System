@@ -2,15 +2,15 @@ package com.library.backend.dto;
 
 import java.time.Year;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+// import lombok.AllArgsConstructor;
+// import lombok.Getter;
+// import lombok.NoArgsConstructor;
+// import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+// @Getter
+// @Setter
+// @NoArgsConstructor
+// @AllArgsConstructor
 //to tansfer data between client and server
 //mapped to the entity
 public class booksDto {
