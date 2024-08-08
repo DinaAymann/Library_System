@@ -9,8 +9,8 @@
 ![image](https://github.com/user-attachments/assets/09a59c40-b961-404f-a077-6a72e4bb17ba)
 2- Trying to create an already existing book:
 ![image](https://github.com/user-attachments/assets/0b8e27d0-f49b-4ef0-abb7-d9b58b41205c)
-3- Trying to create a book with missing attributes:
-![image](https://github.com/user-attachments/assets/674b1725-26b6-4fcf-95b7-c5c50aa59c9f)
+3- Trying to create a book with missing main attributes:
+![image](https://github.com/user-attachments/assets/3bfe1fb7-f112-4d84-8590-f2672e00c635)
 4- Entering a non-unique ISBN:
 ![image](https://github.com/user-attachments/assets/244e6d25-9f6b-48e5-8f68-aa661c5bf8fe)
 
