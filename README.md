@@ -12,12 +12,17 @@
 *Retrieve details of a specific book by ID*\
 1- Succesfully finding the book:
 ![image](https://github.com/user-attachments/assets/85aa9a77-9da3-4462-a0f5-cf134df2a4b2)
-2- searching for a book with an id that does not exist:
+2- Searching for a book with an id that does not exist:
 ![image](https://github.com/user-attachments/assets/7a673eba-61a0-418e-9882-5c849cbbbfe2)
 
 *Retrive all books*\
-1-successful retrieve:
+1- Successful retrieve:
 ![image](https://github.com/user-attachments/assets/922dddc4-1306-4951-b97d-f813da067351)
+
+*Delete a book*\
+1- Succesful Delete
+![image](https://github.com/user-attachments/assets/1e474e40-a760-4c08-978b-58b6cbfc2391)
+
 
 
 
