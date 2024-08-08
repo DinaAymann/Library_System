@@ -8,10 +8,13 @@ import com.library.backend.entity.Books;
 import com.library.backend.exception.*;
 import com.library.backend.mapper.BooksMapper;
 import com.library.backend.repository.booksRepo;
+import org.springframework.transaction.annotation.Transactional;
+
 @Service
 public class BooksServiceImp implements BooksService{
 
 	private booksRepo booksRepo;
+    @Transactional(rollbackFor = Exception.class)
 	@Override
 	public booksDto create(booksDto bookDto) {
         try{
@@ -25,6 +28,7 @@ public class BooksServiceImp implements BooksService{
 		}
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public booksDto get(Long id){
 
@@ -34,6 +38,8 @@ public class BooksServiceImp implements BooksService{
 
 	}
 
+
+    @Transactional(readOnly = true)
 	@Override
 	public List<Books> getAll(){
 
