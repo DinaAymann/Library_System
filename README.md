@@ -11,6 +11,7 @@
 
 *Retrieve details of a specific book by ID*\
 1- Succesfully finding the book:
+![image](https://github.com/user-attachments/assets/85aa9a77-9da3-4462-a0f5-cf134df2a4b2)
 2- searching for a book with an id that does not exist:
 ![image](https://github.com/user-attachments/assets/7a673eba-61a0-418e-9882-5c849cbbbfe2)
 
