@@ -87,6 +87,12 @@
 4- Borrow an already Borrowed book:
 ![image](https://github.com/user-attachments/assets/c12dc881-aab4-49fe-a3d0-138f61e8cb4d)
 5- Return a book:
+![image](https://github.com/user-attachments/assets/ed8e5512-5076-4c14-b3d9-e5c78bcba769)
+6- Trying to return a book you did not borrow:
+![image](https://github.com/user-attachments/assets/90bebb90-c213-4c70-9a2f-a853774e5a58)
+7- Trying to borrow an already borrowed book:
+![image](https://github.com/user-attachments/assets/dc75548b-4966-4a5d-973e-091948c0d95f)
+
 
 
 
