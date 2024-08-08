@@ -8,17 +8,17 @@
 1- Successfully Create a book:
 ![image](https://github.com/user-attachments/assets/09a59c40-b961-404f-a077-6a72e4bb17ba)
 2- Trying to create an already existing book:
-![image](https://github.com/user-attachments/assets/0b8e27d0-f49b-4ef0-abb7-d9b58b41205c)
+![image](https://github.com/user-attachments/assets/fb06e498-8636-43db-b524-1c1fe97ab18a)
 3- Trying to create a book with missing main attributes:
-![image](https://github.com/user-attachments/assets/3bfe1fb7-f112-4d84-8590-f2672e00c635)
+![image](https://github.com/user-attachments/assets/5331fbfd-5a71-4265-bbcd-b653ad112202)
 4- Entering a non-unique ISBN:
-![image](https://github.com/user-attachments/assets/244e6d25-9f6b-48e5-8f68-aa661c5bf8fe)
+![image](https://github.com/user-attachments/assets/10eb8444-72cc-4285-a65b-daa4e119e448)
 
 *Retrieve details of a specific book by ID*\
 1- Successfully finding the book:
 ![image](https://github.com/user-attachments/assets/85aa9a77-9da3-4462-a0f5-cf134df2a4b2)
 2- Searching for a book with an id that does not exist:
-![image](https://github.com/user-attachments/assets/7a673eba-61a0-418e-9882-5c849cbbbfe2)
+![image](https://github.com/user-attachments/assets/d612459f-f37e-48b5-8306-98c453be2730)
 
 *Retrieve all books*\
 1- Successful retrieve:
@@ -28,7 +28,7 @@
 1- Succesful Delete:
 ![image](https://github.com/user-attachments/assets/1e474e40-a760-4c08-978b-58b6cbfc2391)
 2- Deleting a non-existing book:
-![image](https://github.com/user-attachments/assets/f70beb65-36b0-47a1-8681-cd60b12291f5)
+![image](https://github.com/user-attachments/assets/0e61829f-b083-4b42-b915-f82bfcca93aa)
 
 *Update a book*\
 1- Succesful update:
@@ -36,7 +36,7 @@
 2- Updating with invalid input (ex: not a unique Isbn):
 ![image](https://github.com/user-attachments/assets/2f65ea8c-bdef-43f3-8a9a-397244d39b36)
 3- Updating a non-existing book:
-![image](https://github.com/user-attachments/assets/07e5d10a-e303-4f61-96cb-bd7cf05cba0b)
+![image](https://github.com/user-attachments/assets/bf7ad82f-4290-40cd-b17b-3cb9e9230565)
 
 **Patron**
 
@@ -44,11 +44,11 @@
 1- Successfully Create:
 ![image](https://github.com/user-attachments/assets/5e982c10-2890-4261-8b4c-9bd4a8312a3c)
 2- Trying to create an already existing one:
-![image](https://github.com/user-attachments/assets/14986990-75f9-4013-9d6d-68228e89c375)
+![image](https://github.com/user-attachments/assets/39a16906-ac5e-4496-a79c-0dec835a9789)
 3- Trying to create with missing attributes:
-![image](https://github.com/user-attachments/assets/8bac7ca3-c1c6-4616-a8c3-63fd166f3d2e)
+![image](https://github.com/user-attachments/assets/0e68b6bb-974f-404f-9289-76be955684c2)
 4- Entering a non-unique email:
-![image](https://github.com/user-attachments/assets/7b360121-79c3-41cc-8345-71c85bbd2d87)
+![image](https://github.com/user-attachments/assets/eb2b4865-153b-4322-84bf-62a516262ad4)
 5- not including a body:
 ![image](https://github.com/user-attachments/assets/1f71130a-f589-464f-ab27-43ed9f39b611)
 
@@ -56,7 +56,7 @@
 1- Successfully finding the patron:
 ![image](https://github.com/user-attachments/assets/c2137eaa-8ace-4615-aa10-88a1501fe499)
 2- Searching for a patron with an ID that does not exist:
-![image](https://github.com/user-attachments/assets/c6270c2f-7fc0-4f1b-8fd3-7d1e4f93df6a)
+![image](https://github.com/user-attachments/assets/c2f6376a-2dbd-4134-a782-590e60333e61)
 
 *Retrieve all patrons*\
 1- Successful retrieve:
@@ -66,7 +66,7 @@
 1- Succesful Delete:
 ![image](https://github.com/user-attachments/assets/0447baeb-203c-48aa-a1eb-c742814a67e5)
 2- Deleting a non-existing patron:
-![image](https://github.com/user-attachments/assets/71ef3fad-c446-4137-b0b2-8a2933a60801)
+![image](https://github.com/user-attachments/assets/ea45a128-5cb2-429a-ac5d-445cc9c11bae)
 
 *Update a patron*\
 1- Succesful update:
@@ -74,7 +74,7 @@
 2- Updating with invalid input (ex: not a unique phone number):
 ![image](https://github.com/user-attachments/assets/fc021af5-9451-475c-aadc-59c462c15100)
 3- Updating a non-existing patron:
-![image](https://github.com/user-attachments/assets/4501809f-18fd-4851-b244-e6be3d158252)
+![image](https://github.com/user-attachments/assets/480ad246-79ca-46f2-854a-55f2d7242286)
 
 **Borrowing**\
 
