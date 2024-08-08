@@ -28,8 +28,8 @@
 *Update a book*\
 1- Succesful update:
 ![image](https://github.com/user-attachments/assets/1b300d7c-14ac-40b6-9564-2e58b44b2a3a)
-2- Updating with invalid input:
-
+2- Updating with invalid input (ex: not a unique Isbn):
+![image](https://github.com/user-attachments/assets/2f65ea8c-bdef-43f3-8a9a-397244d39b36)
 3- Updating a non existing book:
 
 
