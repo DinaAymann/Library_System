@@ -8,6 +8,10 @@ public interface BooksService {
 	 public booksDto create(booksDto bookDto) ;
 	 public booksDto get(Long id) ;
 	 public List<Books> getAll() ;
+	 public String delete(Long id) ;
+	 public booksDto update(Long id, booksDto bookDto) ;
+
+
 
 
 
