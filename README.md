@@ -8,7 +8,10 @@
 ![image](https://github.com/user-attachments/assets/674b1725-26b6-4fcf-95b7-c5c50aa59c9f)
 
 *Retrieve details of a specific book by ID*\
-1-
+1- Succesfully finding the book:
+2- searching for a book with an id that does not exist:
+![image](https://github.com/user-attachments/assets/7a673eba-61a0-418e-9882-5c849cbbbfe2)
+
 
 
 
