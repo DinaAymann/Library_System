@@ -30,7 +30,7 @@ public class BooksController {
 	  
 	  //add Book REST API
 	  @PostMapping
-	  public ResponseEntity<booksDto> createBook(@RequestBody booksDto bookDto){ //make sure isbn is unique
+	  public ResponseEntity<booksDto> createBook(@RequestBody booksDto bookDto){ 
 		  booksDto savedbook = booksService.create(bookDto);
 		  return new ResponseEntity<>(savedbook,HttpStatus.CREATED);
 	  }

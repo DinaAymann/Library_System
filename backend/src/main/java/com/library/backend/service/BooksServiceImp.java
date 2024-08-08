@@ -23,7 +23,7 @@ public class BooksServiceImp implements BooksService{
 		return BooksMapper.maptodto(savedBook);
 		}
 		catch (Exception e){
-			throw new CanNotCreate("The input book is not acceptable: "+e.getMessage());
+			throw new CanNotCreate("The input book is not acceptable");
 
 		}
 	}
@@ -83,7 +83,7 @@ public class BooksServiceImp implements BooksService{
 		 catch (NotFound e) {
 			throw new NotFound("No such Book exists: " + id);}
 			catch (Exception z){
-				throw new CanNotCreate("error: "+z.getMessage());
+				throw new CanNotCreate("The book can not be updated");
 			}
 	}
 

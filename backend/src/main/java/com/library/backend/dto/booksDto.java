@@ -1,6 +1,7 @@
 package com.library.backend.dto;
 
 import java.time.Year;
+import java.util.Set;
 
 // import lombok.AllArgsConstructor;
 // import lombok.Getter;
@@ -20,6 +21,7 @@ public class booksDto {
 	    private String author;
 	    private Year pubYear;
 	    private String ISBN;
+		private Set<BorrowingRecordDto> borrowingRecords; 
 	    
 	 // No-args constructor
 	    public booksDto() {}
@@ -31,6 +33,7 @@ public class booksDto {
 	        this.author = author;
 	        this.pubYear = pubYear;
 	        this.ISBN = ISBN;
+
 	    }
 
 	    // Getter and Setter methods
@@ -73,5 +76,5 @@ public class booksDto {
 	    public void setISBN(String ISBN) {
 	        this.ISBN = ISBN;
 	    }
-
+		
 }

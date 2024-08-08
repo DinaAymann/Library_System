@@ -1,16 +1,27 @@
 package com.library.backend.entity;
 
 import java.time.Year;
+import java.util.Set;
+
+import javax.validation.constraints.Pattern;
+
+import com.library.backend.dto.BorrowingRecordDto;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
-@Table(name = "books")
-public class Books {
+@Table(name = "books", 
+       uniqueConstraints = {@UniqueConstraint(columnNames = {"title", "author"})})
+       
+       public class Books {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,17 +30,22 @@ public class Books {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "author")
+    @Column(name = "author", nullable = false)
     private String author;
 
     @Column(name = "pub_year")
     private Year pubYear;
 
     @Column(name = "isbn", 
-   // nullable = false,
+     nullable = false,
      unique = true)
+    @Pattern(regexp = "^(\\d{9}[\\dX])$", message = "Invalid ISBN-10 format")
     private String ISBN;
     
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<BorrowingRecord> borrowingRecords;
+
+
  // No-args constructor
     public Books() {}
 
@@ -82,5 +98,6 @@ public class Books {
     public void setISBN(String ISBN) { //format
         this.ISBN = ISBN;
     }
+    
 
 }

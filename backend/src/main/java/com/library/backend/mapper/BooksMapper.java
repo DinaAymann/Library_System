@@ -1,5 +1,7 @@
 package com.library.backend.mapper;
 
+import java.util.stream.Collectors;
+
 import com.library.backend.dto.booksDto;
 import com.library.backend.entity.Books;
 
@@ -11,8 +13,7 @@ public class BooksMapper {
                 book.getTitle(),
                 book.getAuthor(),
                 book.getPubYear(),
-                book.getISBN()	
-						);
+                book.getISBN()	);
 	} 
 	public static Books maptodto (booksDto book) {
 		return new Books(
@@ -20,7 +21,6 @@ public class BooksMapper {
                 book.getTitle(),
                 book.getAuthor(),
                 book.getPubYear(),
-                book.getISBN()	
-						);
+                book.getISBN() );
 	}	
 }

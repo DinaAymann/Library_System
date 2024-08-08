@@ -1,54 +1,61 @@
 package com.library.backend.entity;
 
 import java.time.Year;
+import java.util.Set;
 
-import org.hibernate.annotations.processing.Pattern;
+import jakarta.persistence.CascadeType;
+
+//import org.hibernate.annotations.processing.Pattern;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "patron")
+@NoArgsConstructor
+
 public class Patron {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false, unique = true, length = 15)
+    @Pattern(regexp = "^\\+?[0-9. ()-]{7,15}$", message = "Invalid phone number")
     private String phone;
 
-    @Column(name = "email")
+    @Column(name = "email", nullable = false, unique = true)
     @Pattern(regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$", message = "Invalid email format")
+    private String email;
 
-    private Email eamil;
+   // @OneToMany(mappedBy = "patron", cascade = CascadeType.ALL, orphanRemoval = true)
+   @OneToMany( fetch = FetchType.LAZY,cascade = CascadeType.REMOVE,orphanRemoval = true, mappedBy = "patron") 
+    private Set<BorrowingRecord> borrowingRecords;
 
-    @Column(name = "isbn", 
-   // nullable = false,
-     unique = true)
-    private String ISBN;
-    
- // No-args constructor
-    public Books() {}
-
-    // All-args constructor
-    public Books(Long id, String title, String author, Year pubYear, String ISBN) {
+     // Custom constructor excluding borrowingRecords
+     public Patron(Long id, String name, String phone, String email) {
         this.id = id;
-        this.title = title;
-        this.author = author;
-        this.pubYear = pubYear;
-        this.ISBN = ISBN;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
     }
 
-    // Getter and Setter methods
+    // Getter and Setter methods 
     public Long getId() {
         return id;
     }
@@ -57,36 +64,31 @@ public class Patron {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public Year getPubYear() {
-        return pubYear;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPubYear(Year pubYear) {
-        this.pubYear = pubYear;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getISBN() {
-        return ISBN;
-    }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
-    }
+    
 
 }
