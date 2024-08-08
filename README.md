@@ -20,8 +20,11 @@
 ![image](https://github.com/user-attachments/assets/922dddc4-1306-4951-b97d-f813da067351)
 
 *Delete a book*\
-1- Succesful Delete
+1- Succesful Delete:
 ![image](https://github.com/user-attachments/assets/1e474e40-a760-4c08-978b-58b6cbfc2391)
+2- Deleting a non existing book:
+![image](https://github.com/user-attachments/assets/f70beb65-36b0-47a1-8681-cd60b12291f5)
+
 
 
 
