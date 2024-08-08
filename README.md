@@ -1,6 +1,6 @@
 *This library system website mainly uses Java, Spring Boot, PostgreSQL and REST APIs.*
 
-**To Run the project:** Run the BackendApplication class. 
+**To Run the project:** Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java). 
 
 **Postman API testing**\
 **Books**\
