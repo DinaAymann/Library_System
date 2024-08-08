@@ -53,6 +53,9 @@ public class BorrowingServiceImpl implements BorrowingService {
         }
         catch (NotFound e) {
 			throw e ;}
+            catch (CanNotCreate z){
+				throw z;
+			}
 			catch (Exception z){
 				throw new CanNotCreate("The borrowing process can not be done");
 			}
