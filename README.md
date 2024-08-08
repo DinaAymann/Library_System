@@ -15,6 +15,12 @@
 2- searching for a book with an id that does not exist:
 ![image](https://github.com/user-attachments/assets/7a673eba-61a0-418e-9882-5c849cbbbfe2)
 
+*Retrive all books*\
+1-successful retrieve:
+![image](https://github.com/user-attachments/assets/922dddc4-1306-4951-b97d-f813da067351)
+
+
+
 
 
 
