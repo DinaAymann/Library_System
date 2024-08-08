@@ -7,7 +7,7 @@
 3- Trying to create a book with missing attributes:
 ![image](https://github.com/user-attachments/assets/674b1725-26b6-4fcf-95b7-c5c50aa59c9f)
 
-* Retrieve details of a specific book by ID*\
+*Retrieve details of a specific book by ID*\
 1-
 
 
