@@ -76,6 +76,20 @@
 3- Updating a non-existing patron:
 ![image](https://github.com/user-attachments/assets/4501809f-18fd-4851-b244-e6be3d158252)
 
+**Borrowing**\
+
+1- A patron borrows a book:
+![image](https://github.com/user-attachments/assets/80470f1d-7414-47ef-b64a-fcd631075020)
+2- Borrowing with a non-existing patron ID:
+![image](https://github.com/user-attachments/assets/a9cd4f20-9049-472d-9481-f15aa7ac27c6)
+3- Borrowing with a non-existing book ID:
+![image](https://github.com/user-attachments/assets/bb92fc15-8b30-47a0-aa10-8676d6e93008)
+4- Borrow an already Borrowed book:
+![image](https://github.com/user-attachments/assets/c12dc881-aab4-49fe-a3d0-138f61e8cb4d)
+5- Return a book:
+
+
+
 
 
 
