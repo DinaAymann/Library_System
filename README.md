@@ -25,6 +25,12 @@
 2- Deleting a non existing book:
 ![image](https://github.com/user-attachments/assets/f70beb65-36b0-47a1-8681-cd60b12291f5)
 
+*Update a book*\
+1- Succesful update:
+![image](https://github.com/user-attachments/assets/1b300d7c-14ac-40b6-9564-2e58b44b2a3a)
+2- Updating with invalid input:
+
+3- Updating a non existing book:
 
 
 
