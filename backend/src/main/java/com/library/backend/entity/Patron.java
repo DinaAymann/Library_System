@@ -1,29 +1,35 @@
 package com.library.backend.entity;
 
 import java.time.Year;
+
+import org.hibernate.annotations.processing.Pattern;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 @Entity
-@Table(name = "books")
-public class Books {
+@Table(name = "patron")
+public class Patron {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title", nullable = false)
-    private String title;
+    @Column(name = "name", nullable = false)
+    private String name;
 
-    @Column(name = "author")
-    private String author;
+    @Column(name = "phone")
+    private String phone;
 
-    @Column(name = "pub_year")
-    private Year pubYear;
+    @Column(name = "email")
+    @Pattern(regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$", message = "Invalid email format")
+
+    private Email eamil;
 
     @Column(name = "isbn", 
    // nullable = false,
@@ -79,7 +85,7 @@ public class Books {
         return ISBN;
     }
 
-    public void setISBN(String ISBN) { //format
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 
