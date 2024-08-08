@@ -43,36 +43,38 @@
 *Creating a patron*\
 1- Successfully Create:
 ![image](https://github.com/user-attachments/assets/5e982c10-2890-4261-8b4c-9bd4a8312a3c)
-
 2- Trying to create an already existing one:
-
+![image](https://github.com/user-attachments/assets/14986990-75f9-4013-9d6d-68228e89c375)
 3- Trying to create with missing attributes:
-
+![image](https://github.com/user-attachments/assets/8bac7ca3-c1c6-4616-a8c3-63fd166f3d2e)
 4- Entering a non-unique email:
-
+![image](https://github.com/user-attachments/assets/7b360121-79c3-41cc-8345-71c85bbd2d87)
+5- not including a body:
+![image](https://github.com/user-attachments/assets/1f71130a-f589-464f-ab27-43ed9f39b611)
 
 *Retrieve details of a specific patron by ID*\
 1- Successfully finding the patron:
-
+![image](https://github.com/user-attachments/assets/c2137eaa-8ace-4615-aa10-88a1501fe499)
 2- Searching for a patron with an ID that does not exist:
-
+![image](https://github.com/user-attachments/assets/c6270c2f-7fc0-4f1b-8fd3-7d1e4f93df6a)
 
 *Retrieve all patrons*\
 1- Successful retrieve:
-
+![image](https://github.com/user-attachments/assets/008a8347-cb4c-43e9-a479-a73575b58774)
 
 *Delete a patron*\
 1- Succesful Delete:
-
+![image](https://github.com/user-attachments/assets/0447baeb-203c-48aa-a1eb-c742814a67e5)
 2- Deleting a non-existing patron:
-
+![image](https://github.com/user-attachments/assets/71ef3fad-c446-4137-b0b2-8a2933a60801)
 
 *Update a patron*\
 1- Succesful update:
-
+![image](https://github.com/user-attachments/assets/5448ead0-46a8-40d5-a395-aad697cdd213)
 2- Updating with invalid input (ex: not a unique phone number):
-
+![image](https://github.com/user-attachments/assets/fc021af5-9451-475c-aadc-59c462c15100)
 3- Updating a non-existing patron:
+![image](https://github.com/user-attachments/assets/4501809f-18fd-4851-b244-e6be3d158252)
 
 
 
