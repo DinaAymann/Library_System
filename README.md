@@ -6,6 +6,8 @@
 ![image](https://github.com/user-attachments/assets/0b8e27d0-f49b-4ef0-abb7-d9b58b41205c)
 3- Trying to create a book with missing attributes:
 ![image](https://github.com/user-attachments/assets/674b1725-26b6-4fcf-95b7-c5c50aa59c9f)
+4- Entering a non unique ISBN:
+![image](https://github.com/user-attachments/assets/244e6d25-9f6b-48e5-8f68-aa661c5bf8fe)
 
 *Retrieve details of a specific book by ID*\
 1- Succesfully finding the book:
