@@ -60,7 +60,7 @@ public class BooksServiceImp implements BooksService{
 
 			Optional<BorrowingRecord> existingRecord = borrowingRecordRepository.findByBookId(id);
             if (existingRecord.isPresent()) {
-                borrowingRecordRepository.deleteByBookIc(id);
+                borrowingRecordRepository.deleteByBookId(id);
             }
 
 			booksRepo.findById(id).orElseThrow(() -> new NotFound("No such Book exists  : " + id));
