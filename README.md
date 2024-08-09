@@ -1,12 +1,6 @@
 *This library system website mainly uses Java, Spring Boot, PostgreSQL and REST APIs.*
 
-**To Run the project:** Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java). 
-
-**Authorization testing**\
-Without any authentication headers. 
-![image](https://github.com/user-attachments/assets/dee1db62-669e-4391-a29a-646571ce7041)
-With authentication header. 
-
+**To Run the project:** Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
 
 **Postman API testing**\
 **Books**\
@@ -98,6 +92,145 @@ With authentication header.
 ![image](https://github.com/user-attachments/assets/b4fa1692-7c2f-44a2-b875-aa4ea92e80b0)
 
 
+# Books API Documentation
+
+## Overview
+
+The `BooksController` class provides a RESTful API for managing books within a library system. This API allows clients to perform various operations related to books.
+
+## Base URL
+
+The base URL for all endpoints is:
+
+http://localhost:8080/api/books
+
+
+## Endpoints
+
+### 1. Create a New Book
+
+- **Endpoint:** `/api/books`
+- **Method:** `POST`
+- **Description:** Adds a new book to the system.
+
+#### Request
+
+- **Content-Type:** `application/json`
+
+- **Request Body Example:**
+
+    ```json
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9780743273565",
+      "publishedDate": "1925-04-10"
+    }
+    ```
+
+  - **Fields:**
+    - `title` (String): The title of the book.
+    - `author` (String): The author of the book.
+    - `isbn` (String): The ISBN of the book.
+    - `publishedDate` (String): The publication date of the book in `YYYY-MM-DD` format.
+
+
+### 2. Update a Book
+
+- **Endpoint:** `/api/books/{id}`
+- **Method:** `PUT`
+- **Description:** Updates the details of an existing book.
+
+#### Request
+
+- **Content-Type:** `application/json`
+- **Path Parameter:** `id` (Long): The ID of the book to be updated.
+
+- **Request Body Example:**
+
+    ```json
+    {
+      "title": "The Great Gatsby - Updated",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9780743273565",
+      "publishedDate": "1925-04-10"
+    }
+    ```
+
+  - **Fields:**
+    - `title` (String): The new title of the book.
+    - `author` (String): The new author of the book.
+    - `isbn` (String): The new ISBN of the book.
+    - `publishedDate` (String): The new publication date of the book in `YYYY-MM-DD` format.
+
+### 3. Get a Book by ID
+
+- **Endpoint:** `/api/books/{id}`
+- **Method:** `GET`
+- **Description:** Retrieves the details of a specific book.
+
+#### Request
+
+- **Path Parameter:** `id` (Long): The ID of the book to be retrieved.
+
+### 4. Delete a Book
+
+- **Endpoint:** `/api/books/{id}`
+- **Method:** `DELETE`
+- **Description:** Deletes a specific book from the system.
+
+#### Request
+
+- **Path Parameter:** `id` (Long): The ID of the book to be deleted.
+
+#### Response
+
+- **Success (204 No Content):**
+  - **Description:** Indicates that the book was successfully deleted. No content is returned.
+
+- **Error (404 Not Found):**
+  - **Content-Type:** `application/json`
+  - **Response Body Example:**
+
+    ```json
+    {
+      "error": "Book not found"
+    }
+    ```
+  - **Description:** Returned if the book with the specified ID does not exist.
+
+## Error Handling
+
+- **400 Bad Request:** Returned when the request body is invalid or missing required fields.
+- **404 Not Found:** Returned when the specified book does not exist in the system.
+
+## Dependencies
+
+Ensure the following dependencies are included in your `pom.xml` or `build.gradle` file:
+
+- **Spring Boot Starter Web**
+- **Spring Boot Starter Data JPA** (if using a database)
+
+## Running the Application
+
+To run the Spring Boot application:
+
+1. Ensure you have Java installed and set up.
+2. Use the following command to start the application:
+
+    ```bash
+    ./mvnw spring-boot:run
+    ```
+    or
+    ```bash
+    ./gradlew bootRun
+    ```
+
+3. The application will be accessible at `http://localhost:8080/api/books`.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
 
