@@ -2,6 +2,8 @@ package com.library.backend;
 
 import com.library.backend.dto.BorrowingRecordDto;
 import com.library.backend.controller.BorrowingController;
+import com.library.backend.exception.CanNotCreate;
+import com.library.backend.exception.NotFound;
 import com.library.backend.service.BorrowingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -58,4 +60,28 @@ public class BorrowRecordControllerTest {
           .andExpect(MockMvcResultMatchers.status().isOk())
           .andExpect(MockMvcResultMatchers.jsonPath("$.returnDate").value(LocalDate.now().toString()));
  }
+
+ @Test
+ public void testBorrowBookAlreadyBorrowed() throws Exception {
+  // Simulate an exception when trying to borrow a book that's already borrowed
+  when(borrowingService.borrowBook(anyLong(), anyLong()))
+          .thenThrow(new CanNotCreate("This book is already borrowed and not yet returned."));
+
+  mockMvc.perform(post("/api/borrow/{bookId}/patron/{patronId}", 1L, 1L)
+                  .contentType(MediaType.APPLICATION_JSON))
+          .andExpect(MockMvcResultMatchers.status().isUnprocessableEntity());
+ }
+
+ @Test
+ public void testReturnBookNotBorrowed() throws Exception {
+  when(borrowingService.returnBook(anyLong(), anyLong()))
+          .thenThrow(new NotFound("No active borrowing record found for book 1 and patron 1"));
+
+  mockMvc.perform(put("/api/return/{bookId}/patron/{patronId}", 1L, 1L)
+                  .contentType(MediaType.APPLICATION_JSON))
+          .andExpect(MockMvcResultMatchers.status().isNotFound());
+ }
+
+
+
 }
