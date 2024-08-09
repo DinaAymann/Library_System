@@ -2,9 +2,9 @@
 
 **To Run the project:**\
 1- Ensure you have Java (17) installed and set up.\
-2- build and ensure that all libraries are set up.\
-2- Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
-3- The application will be accessible at `http://localhost:8080/api/books`.
+2- build (build.gradle) and ensure that all libraries and dependencies are set up.\
+3- Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
+4- The application will be accessible at `http://localhost:8080/api/books`.
 
 **PostgreSQL database relations:** 
 - books(one-to-many)Borrows.
