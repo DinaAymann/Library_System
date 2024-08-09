@@ -7,7 +7,7 @@ import com.library.backend.controller.BooksController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions.*;
-
+import com.library.backend.exception.CanNotCreate;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -80,6 +80,22 @@ public class BookControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Updated Title"));
     }
+
+    @Test
+    public void testUpdateBookFailure() throws Exception {
+        // Simulate a CanNotUpdate exception when trying to update a book
+        when(booksService.update(anyLong(), any(booksDto.class)))
+                .thenThrow(new CanNotCreate("The update process cannot be completed"));
+
+        // Define the updated book JSON payload
+        String updatedBookJson = "{\"title\":\"Updated Title\",\"author\":\"Updated Author\",\"pubYear\":\"2020\",\"ISBN\":\"0000-0000-0000-0000\"}";
+
+        mockMvc.perform(put("/api/books/{id}", 1L)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(updatedBookJson))
+                .andExpect(MockMvcResultMatchers.status().isUnprocessableEntity()); // 422 Unprocessable Entity for validation or update errors
+    }
+
 
     @Test
     public void testDeleteBook() throws Exception {

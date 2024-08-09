@@ -2,6 +2,7 @@ package com.library.backend;
 
 import com.library.backend.dto.PatronDto;
 import com.library.backend.controller.PatronController;
+import com.library.backend.exception.NotFound;
 import com.library.backend.service.PatronService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,16 @@ public class PatronControllerTest {
           .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1L))
           .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Patron Name"));
  }
+
+ @Test
+ public void testGetPatronNotFound() throws Exception {
+  // Simulate a NotFound exception when trying to get a patron that does not exist
+  when(patronService.get(anyLong())).thenThrow(new NotFound("No such Patron exists: 1"));
+
+  mockMvc.perform(get("/api/patrons/{id}", 1L))
+          .andExpect(MockMvcResultMatchers.status().isNotFound());
+ }
+
 
  @Test
  public void testUpdatePatron() throws Exception {
