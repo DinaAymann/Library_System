@@ -1,6 +1,9 @@
 *This library system website mainly uses Java, Spring Boot, PostgreSQL and REST APIs.*
 
-**To Run the project:** Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
+**To Run the project:** 
+1- Ensure you have Java installed and set up.
+2- Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
+3- The application will be accessible at `http://localhost:8080/api/books`.
 
 **Postman API testing**\
 **Books**\
@@ -211,26 +214,6 @@ Ensure the following dependencies are included in your `pom.xml` or `build.gradl
 - **Spring Boot Starter Web**
 - **Spring Boot Starter Data JPA** (if using a database)
 
-## Running the Application
-
-To run the Spring Boot application:
-
-1. Ensure you have Java installed and set up.
-2. Use the following command to start the application:
-
-    ```bash
-    ./mvnw spring-boot:run
-    ```
-    or
-    ```bash
-    ./gradlew bootRun
-    ```
-
-3. The application will be accessible at `http://localhost:8080/api/books`.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 
 
