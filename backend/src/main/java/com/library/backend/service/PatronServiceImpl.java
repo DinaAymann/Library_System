@@ -1,24 +1,31 @@
 package com.library.backend.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.library.backend.dto.PatronDto;
+import com.library.backend.entity.BorrowingRecord;
 import com.library.backend.entity.Patron;
 import com.library.backend.exception.CanNotCreate;
 import com.library.backend.exception.NotFound;
 import com.library.backend.mapper.PatronMapper;
+import com.library.backend.repository.BorrowingRecordRepository;
 import com.library.backend.repository.PatronRepository;
 
 @Service
 public class PatronServiceImpl implements PatronService {
 
     private PatronRepository patronRepository;
+    private final BorrowingRecordRepository borrowingRecordRepository;
 
     @Autowired
-    public PatronServiceImpl(PatronRepository patronRepository) {
+    public PatronServiceImpl(PatronRepository patronRepository, BorrowingRecordRepository borrowingRecordRepository) {
         this.patronRepository = patronRepository;
+        this.borrowingRecordRepository = borrowingRecordRepository;
+
     }
 
     @Transactional(rollbackFor = Exception.class)
@@ -52,6 +59,10 @@ public class PatronServiceImpl implements PatronService {
     @Override
     public String delete(Long id) {
         try {
+             Optional<BorrowingRecord> existingRecord = borrowingRecordRepository.findByPatronId(id);
+            if (existingRecord.isPresent()) {
+                borrowingRecordRepository.deleteByPatronId(id);
+            }
             patronRepository.findById(id)
                 .orElseThrow(() -> new NotFound("No such Patron exists: " + id));
             patronRepository.deleteById(id);

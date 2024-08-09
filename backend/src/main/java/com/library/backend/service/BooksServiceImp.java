@@ -1,12 +1,15 @@
 package com.library.backend.service;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.library.backend.dto.booksDto;
 import com.library.backend.entity.Books;
+import com.library.backend.entity.BorrowingRecord;
 import com.library.backend.exception.*;
 import com.library.backend.mapper.BooksMapper;
+import com.library.backend.repository.BorrowingRecordRepository;
 import com.library.backend.repository.booksRepo;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,6 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class BooksServiceImp implements BooksService{
 
 	private booksRepo booksRepo;
+	private final BorrowingRecordRepository borrowingRecordRepository;
+
     @Transactional(rollbackFor = Exception.class)
 	@Override
 	public booksDto create(booksDto bookDto) {
@@ -53,6 +58,11 @@ public class BooksServiceImp implements BooksService{
 	public String delete(Long id){//input validation for empty
 		try{
 
+			Optional<BorrowingRecord> existingRecord = borrowingRecordRepository.findByBookId(id);
+            if (existingRecord.isPresent()) {
+                borrowingRecordRepository.deleteByBookIc(id);
+            }
+
 			booksRepo.findById(id).orElseThrow(() -> new NotFound("No such Book exists  : " + id));
 			booksRepo.deleteById(id);
 			return "Done";
@@ -89,8 +99,9 @@ public class BooksServiceImp implements BooksService{
 
 
 	 @Autowired
-	    public BooksServiceImp(booksRepo booksRepo) {
+	    public BooksServiceImp(booksRepo booksRepo, BorrowingRecordRepository borrowingRecordRepository) {
 	        this.booksRepo = booksRepo;
+			this.borrowingRecordRepository=borrowingRecordRepository;
 	    }
 	
 }
