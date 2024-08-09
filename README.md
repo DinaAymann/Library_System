@@ -3,8 +3,9 @@
 **To Run the project:**\
 1- Ensure you have Java (17) installed and set up.\
 2- build (build.gradle) and ensure that all libraries and dependencies are set up.\
-3- Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
-4- The application will be accessible at `http://localhost:8080/api/books`.
+3- The project makes use of local empty database to create its tables and constraints. On pgAdmin create an emty database Library (username: postgre, password:0000). To change the name or the credentials for the used database look the application.properties file. 
+4- Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
+5- The application will be accessible at `http://localhost:8080/api/books`.
 
 **PostgreSQL database relations:** 
 - books(one-to-many)Borrows.
