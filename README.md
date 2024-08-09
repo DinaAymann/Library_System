@@ -170,6 +170,12 @@ http://localhost:8080/api/books
 
 - **Path Parameter:** `id` (Long): The ID of the book to be retrieved.
 
+### Get All Books
+
+- **Endpoint:** `/api/books`
+- **Method:** `GET`
+- **Description:** Retrieves the details of all books.
+
 ### 4. Delete a Book
 
 - **Endpoint:** `/api/books/{id}`
