@@ -1,4 +1,4 @@
-// package com.library.backend;
+package com.library.backend;
 
 // //import .Patron;
 // //import PatronService;
@@ -21,7 +21,7 @@
 // import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 
 // @WebMvcTest
-// public class PatronControllerTest {
+ public class PatronControllerTest {
 
 //     private MockMvc mockMvc;
 
@@ -77,4 +77,4 @@
 //         mockMvc.perform(delete("/patrons/{id}", 1L))
 //                 .andExpect(MockMvcResultMatchers.status().isNoContent());
 //     }
-// }
+ }
