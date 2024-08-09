@@ -2,6 +2,12 @@
 
 **To Run the project:** Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java). 
 
+**Authorization testing**\
+Without any authentication headers. 
+![image](https://github.com/user-attachments/assets/dee1db62-669e-4391-a29a-646571ce7041)
+With authentication header. 
+
+
 **Postman API testing**\
 **Books**\
 *Creating a Book*\
