@@ -12,6 +12,6 @@ public interface BorrowingRecordRepository extends JpaRepository<BorrowingRecord
     Optional<BorrowingRecord> findByBookIdAndReturnDateIsNull(Long bookId);
     Optional<BorrowingRecord> findByPatronId(Long id);
     void deleteByPatronId(Long id);
-    void deleteByBookIc(Long id);
+    void deleteByBookId(Long id);
 
 }
