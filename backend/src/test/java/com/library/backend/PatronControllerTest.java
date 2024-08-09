@@ -1,80 +1,76 @@
 package com.library.backend;
 
-// //import .Patron;
-// //import PatronService;
-// import org.junit.jupiter.api.BeforeEach;
-// import org.junit.jupiter.api.Test;
-// import org.mockito.InjectMocks;
-// import org.mockito.Mock;
-// import org.mockito.MockitoAnnotations;
-// import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-// import org.springframework.http.MediaType;
-// import org.springframework.test.web.servlet.MockMvc;
-// import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-// import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import com.library.backend.dto.PatronDto;
+import com.library.backend.controller.PatronController;
+import com.library.backend.service.PatronService;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-// import static org.mockito.Mockito.any;
-// import static org.mockito.Mockito.when;
-// import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-// import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-// import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-// import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.anyLong;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 
-// @WebMvcTest
- public class PatronControllerTest {
+@WebMvcTest(PatronController.class)
+public class PatronControllerTest {
 
-//     private MockMvc mockMvc;
+ @Autowired
+ private MockMvc mockMvc;
 
-//     @Mock
-//     private PatronService patronService;
+ @MockBean
+ private PatronService patronService;
 
-//     @InjectMocks
-//     private PatronController patronController;
+ @Test
+ public void testCreatePatron() throws Exception {
+  PatronDto patronDto = new PatronDto(1L, "Patron Name", "123-456-7890", "patron@example.com");
+  when(patronService.create(any(PatronDto.class))).thenReturn(patronDto);
 
-//     @BeforeEach
-//     public void setup() {
-//         MockitoAnnotations.openMocks(this);
-//         mockMvc = MockMvcBuilders.standaloneSetup(patronController).build();
-//     }
+  String patronJson = "{\"name\":\"Patron Name\",\"phone\":\"123-456-7890\",\"email\":\"patron@example.com\"}";
 
-//     @Test
-//     public void testCreatePatron() throws Exception {
-//         when(patronService.savePatron(any(Patron.class))).thenReturn(new Patron(1L, "Patron Name"));
-
-//         String patronJson = "{\"name\":\"Patron Name\"}";
-
-//         mockMvc.perform(post("/patrons")
-//                 .contentType(MediaType.APPLICATION_JSON)
-//                 .content(patronJson))
-//                 .andExpect(MockMvcResultMatchers.status().isCreated())
-//                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1L));
-//     }
-
-//     @Test
-//     public void testGetPatron() throws Exception {
-//         when(patronService.getPatronById(1L)).thenReturn(new Patron(1L, "Patron Name"));
-
-//         mockMvc.perform(get("/patrons/{id}", 1L))
-//                 .andExpect(MockMvcResultMatchers.status().isOk())
-//                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1L));
-//     }
-
-//     @Test
-//     public void testUpdatePatron() throws Exception {
-//         when(patronService.updatePatron(any(Long.class), any(Patron.class))).thenReturn(new Patron(1L, "Updated Name"));
-
-//         String updatedPatronJson = "{\"name\":\"Updated Name\"}";
-
-//         mockMvc.perform(put("/patrons/{id}", 1L)
-//                 .contentType(MediaType.APPLICATION_JSON)
-//                 .content(updatedPatronJson))
-//                 .andExpect(MockMvcResultMatchers.status().isOk())
-//                 .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Updated Name"));
-//     }
-
-//     @Test
-//     public void testDeletePatron() throws Exception {
-//         mockMvc.perform(delete("/patrons/{id}", 1L))
-//                 .andExpect(MockMvcResultMatchers.status().isNoContent());
-//     }
+  mockMvc.perform(post("/api/patrons")
+                  .contentType(MediaType.APPLICATION_JSON)
+                  .content(patronJson))
+          .andExpect(MockMvcResultMatchers.status().isCreated())
+          .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1L))
+          .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Patron Name"));
  }
+
+ @Test
+ public void testGetPatron() throws Exception {
+  PatronDto patronDto = new PatronDto(1L, "Patron Name", "123-456-7890", "patron@example.com");
+  when(patronService.get(anyLong())).thenReturn(patronDto);
+
+  mockMvc.perform(get("/api/patrons/{id}", 1L))
+          .andExpect(MockMvcResultMatchers.status().isOk())
+          .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1L))
+          .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Patron Name"));
+ }
+
+ @Test
+ public void testUpdatePatron() throws Exception {
+  PatronDto updatedPatronDto = new PatronDto(1L, "Updated Name", "123-456-7890", "updated@example.com");
+  when(patronService.update(anyLong(), any(PatronDto.class))).thenReturn(updatedPatronDto);
+
+  String updatedPatronJson = "{\"name\":\"Updated Name\",\"phone\":\"123-456-7890\",\"email\":\"updated@example.com\"}";
+
+  mockMvc.perform(put("/api/patrons/{id}", 1L)
+                  .contentType(MediaType.APPLICATION_JSON)
+                  .content(updatedPatronJson))
+          .andExpect(MockMvcResultMatchers.status().isOk())
+          .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Updated Name"));
+ }
+
+ @Test
+ public void testDeletePatron() throws Exception {
+  mockMvc.perform(delete("/api/patrons/{id}", 1L))
+          .andExpect(MockMvcResultMatchers.status().isNoContent());
+ }
+}
