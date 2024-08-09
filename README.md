@@ -5,6 +5,10 @@
 2- Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
 3- The application will be accessible at `http://localhost:8080/api/books`.
 
+**PostgreSQL database relations:** 
+- books(one-to-many)Borrows.
+- patrons(one-to-many)Borrows.
+
 **Postman API testing**\
 **Books**\
 *Creating a Book*\
