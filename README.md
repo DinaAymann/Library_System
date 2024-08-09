@@ -1,7 +1,8 @@
 *This library system website mainly uses Java, Spring Boot, PostgreSQL and REST APIs.*
 
 **To Run the project:**\
-1- Ensure you have Java installed and set up.\
+1- Ensure you have Java (17) installed and set up.\
+2- build and ensure that all libraries are set up.\
 2- Run the BackendApplication class (path: backend\src\main\java\com\library\backend\BackendApplication.java).  
 3- The application will be accessible at `http://localhost:8080/api/books`.
 
