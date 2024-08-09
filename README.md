@@ -130,16 +130,12 @@ http://localhost:8080/api/books
     {
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
-      "isbn": "9780743273565",
-      "publishedDate": "1925-04-10"
+      "isbn": "978-0743-2735-6543",
+      "pubYear": "2020"
     }
     ```
 
-  - **Fields:**
-    - `title` (String): The title of the book.
-    - `author` (String): The author of the book.
-    - `isbn` (String): The ISBN of the book.
-    - `publishedDate` (String): The publication date of the book in `YYYY-MM-DD` format.
+
 
 
 ### 2. Update a Book
@@ -159,16 +155,10 @@ http://localhost:8080/api/books
     {
       "title": "The Great Gatsby - Updated",
       "author": "F. Scott Fitzgerald",
-      "isbn": "9780743273565",
-      "publishedDate": "1925-04-10"
+      "isbn": "978-0749-3273-7565",
+      "pubYear": "2020"
     }
     ```
-
-  - **Fields:**
-    - `title` (String): The new title of the book.
-    - `author` (String): The new author of the book.
-    - `isbn` (String): The new ISBN of the book.
-    - `publishedDate` (String): The new publication date of the book in `YYYY-MM-DD` format.
 
 ### 3. Get a Book by ID
 
@@ -200,12 +190,30 @@ http://localhost:8080/api/books
 
 ## Dependencies
 
-Ensure the following dependencies are included in your `pom.xml` or `build.gradle` file:
+Ensure the following dependencies are included in your `build.gradle` file:
 
 - **Spring Boot Starter Web**
 - **Spring Boot Starter Data JPA** (if using a database)
 
+## Borrow API Documentation
 
+This document provides an overview of the Borrow APIs available in the Library Management System. The Borrow APIs allow you to create, retrieve, update, and delete borrow records.
+
+
+### Borrow Endpoints
+
+#### 1. Create a Borrow Record
+
+- **URL:** ` /api/borrow/{bookId}/patron/{patronId}`
+- **Method:** `POST`
+- **Description:** Creates a new borrow record for a book and a patron.
+
+
+#### 2.  Return a Borrowed Book
+
+- **URL:** `/api/return/{bookId}/patron/{patronId}`
+- **Method:** `PUT`
+- **Description:** Marks a borrowed book as returned.
 
 
 
