@@ -186,26 +186,13 @@ http://localhost:8080/api/books
 
 - **Path Parameter:** `id` (Long): The ID of the book to be deleted.
 
-#### Response
-
-- **Success (204 No Content):**
-  - **Description:** Indicates that the book was successfully deleted. No content is returned.
-
-- **Error (404 Not Found):**
-  - **Content-Type:** `application/json`
-  - **Response Body Example:**
-
-    ```json
-    {
-      "error": "Book not found"
-    }
-    ```
-  - **Description:** Returned if the book with the specified ID does not exist.
 
 ## Error Handling
 
 - **400 Bad Request:** Returned when the request body is invalid or missing required fields.
 - **404 Not Found:** Returned when the specified book does not exist in the system.
+- **422 Unprocessable Entity:** Returned when the request is unable to be processed due to semantic errors, such as invalid values or constraints.
+
 
 ## Dependencies
 
